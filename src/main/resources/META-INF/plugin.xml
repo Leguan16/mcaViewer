@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>at.noah.mcaFileViewer</id>
+    <name>Mca File Viewer</name>
+    <vendor email="longboard.noah@gmail.com" url="https://github.com/Leguan16"/>
+
+    <description><![CDATA[
+    A plugin to view and edit mca files <br>
+    directly in IntelliJ, without needing to switch program<br>
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <fileType name="Minecraft Anvil" implementationClass="at.noah.mca.fileType.McaFileType" fieldName="INSTANCE"
+                  extensions="mca"/>
+        <fileTypeOverrider implementation="at.noah.mca.fileType.McaFileTypeOverrider"/>
+        <fileEditorProvider implementation="at.noah.mca.editor.McaEditorProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
